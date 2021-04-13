@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true}))
 
 
 app.get('/', (req, res) => {
-    res.redirect('/about', { title: 'About' })
+    res.render('index', { title: 'Home' })
 })
 
 

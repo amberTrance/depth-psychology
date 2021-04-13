@@ -8,7 +8,6 @@ body {
     background-color:white;
     margin: 0;
     color: rgb(50, 68, 83);
-    /* text-shadow: 0.5px 0.5px rgb(128, 75, 6); */
     letter-spacing: 0.5px;
 }
 
@@ -84,8 +83,8 @@ h2 {
 #search {
     padding: 10px;
     font-family: inherit;
-    font-size: 17px;
-    margin: 10px;
+    color: inherit;
+    font-size: 16px;
     border-style: none;
     border-radius: 5px;
 }
@@ -142,4 +141,40 @@ h2 {
     width: 300px;
     text-align: center;
     border-bottom: 2px white solid;
+}
+
+/* Home */
+.container.h {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home {
+    margin: 50px;
+}
+
+.log-btn, .visitor {
+    border-style: none;
+    font-size: 17px;
+    letter-spacing: 1px;
+    background-color: rgb(208, 237, 250);
+    cursor: pointer;
+}
+
+.log-btn {
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.visitor {
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.log {
+    padding: 5px 10px;
+    font-size: 17px;
+    margin-bottom: 10px;
+    border-color: cornflowerblue;
 }
