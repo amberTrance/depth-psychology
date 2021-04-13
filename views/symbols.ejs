@@ -7,7 +7,22 @@
         <!-- navbar -->
         <%- include('./partials/nav.ejs') %>
 
-        <h1>Symbols</h1>
+        <div class="part">
+            <div class="text">
+                <h1>Symbols</h1>
+
+                <% orderedSym.forEach(symbol => { %>
+                    <h2><%= symbol[0].symbol %></h2>
+                    <% symbol.forEach(item => { %> 
+                        <p><%= item.text %></p>
+                    <% }) %>
+                <% }) %>
+
+            </div>
+           
+            <%- include('./partials/symbolsNav.ejs') %>
+        </div>        
+        
     </div>
 </body>
 </html>
