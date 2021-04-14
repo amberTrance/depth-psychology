@@ -134,9 +134,9 @@ h2 {
 
 /* Add btn */
 .add-btn {
-    font-size: 17px;
+    font-size: 18px;
     font-family: inherit;
-    padding: 10px;
+    padding: 15px;
     text-decoration: none;
     width: 300px;
     text-align: center;
@@ -154,7 +154,7 @@ h2 {
     margin: 50px;
 }
 
-.log-btn, .visitor {
+.btn, .visitor {
     border-style: none;
     font-size: 17px;
     letter-spacing: 1px;
@@ -162,9 +162,21 @@ h2 {
     cursor: pointer;
 }
 
-.log-btn {
+.btn {
     padding: 10px 15px;
     border-radius: 4px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:hover {
+    background-color: rgb(153, 245, 222);
 }
 
 .visitor {
@@ -177,4 +189,43 @@ h2 {
     font-size: 17px;
     margin-bottom: 10px;
     border-color: cornflowerblue;
+}
+
+/* Create symbol page */
+#symbol, #author {
+    padding: 7px;
+    width: 250px;
+}
+
+#source {
+    padding: 7px;
+    width: 300px;
+}
+
+#text {
+    width: 300px;
+    height: 200px;
+}
+
+#symbol, #author, #source, #text {
+    margin: 5px 0px 10px 0px;
+    border: 2px rgba(100, 148, 237, 0.548) solid;
+    border-radius: 4px;
+}
+
+textarea:focus, input:focus {
+    outline-color: rgb(114, 195, 241);
+}
+
+textarea, input {
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.group {
+    margin-bottom: 40px;
 }

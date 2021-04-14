@@ -1,8 +1,9 @@
 const Symbol = require('../models/symbol')
 
+
 // Logic for create symbol
-const index_create_symbol = (req, res) => {
-    Symbol.find()
+const create_symbol_index = (req, res) => {
+    Symbol.find().sort({ symbol: 1 })
     .then(result => {
         let array = []
 
@@ -13,11 +14,11 @@ const index_create_symbol = (req, res) => {
 
         res.render('create-symbol', {symbols: uniqSymbols, title: 'Create Symbol'})
     })
-    .catch(err => {console.log(err)})
+    .catch(err => console.log(err))
 }
 
 // Logic for post symbol
-const symbol_create_post = (req, res) => {
+const symbols_post = (req, res) => {
     const symbol = new Symbol(req.body)
     symbol.save()
         .then(result => res.redirect('/symbols'))
@@ -25,8 +26,8 @@ const symbol_create_post = (req, res) => {
 }
 
 // Logic for index symbols page
-const index_symbols = (req, res) => {
-    Symbol.find()
+const symbols_index = (req, res) => {
+    Symbol.find().sort({ symbol: 1 })
         .then(result => {
 
             const array = [];
@@ -55,14 +56,38 @@ const index_symbols = (req, res) => {
                     }
                 })
         }
-
+        
         // Return the symbolsObj ordered by symbol, and the unique Symbols for the symbols navbar
         res.render('symbols', {orderedSym: symbolsObj, symbols: uniqSymbols, title: 'Symbols'})
     })
+    .catch(err => console.log(err))
+}
+
+const symbols_symbol = (req, res) => {
+    const paramSymbol = req.params.sym
+    
+    Symbol.find().sort({ symbol: 1 })
+        .then(result => {
+            let array = []
+
+            // Get the data for the symbols nav
+            result.forEach(symbol => {
+                array.push(symbol.symbol)
+            })
+            uniqSymbols = [...new Set(array)]
+
+            // Get the filtered data with only our requested symbol
+            let requestedSymbol = result.filter(item => item.symbol == paramSymbol)
+            console.log(requestedSymbol)
+
+            res.render('symbol', { reqSymbol: requestedSymbol, symbols: uniqSymbols, title: paramSymbol})
+        })
+        .catch(err => console.log(err))       
 }
 
 module.exports = {
-    index_create_symbol,
-    symbol_create_post,
-    index_symbols
+    create_symbol_index,
+    symbols_post,
+    symbols_index,
+    symbols_symbol
 }

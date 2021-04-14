@@ -25,7 +25,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 // takes all the url encoded data and parses it into an object 
 // that can be used in the request object
-app.use(express.urlencoded({ extended: true}))
+app.use(express.urlencoded({ extended: true }))
 
 
 
@@ -41,6 +41,10 @@ app.get('/about', (req, res) => {
 
 app.get('/quotes', (req, res) => {
     res.render('quotes', { title: 'Quotes'})
+})
+
+app.get('/archetypes', (req, res) => {
+    res.render('archetypes', { title: 'Archetypes'})
 })
 
 app.use(symbolsRoutes)

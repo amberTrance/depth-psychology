@@ -3,8 +3,9 @@ const symContrl = require('../controllers/symbolController')
 const router = express.Router();
 
 
-router.get('/create-symbol', symContrl.index_create_symbol)
-router.post('/symbols', symContrl.symbol_create_post)
-router.get('/symbols', symContrl.index_symbols)
+router.get('/symbol/create', symContrl.create_symbol_index)
+router.post('/symbols', symContrl.symbols_post)
+router.get('/symbols', symContrl.symbols_index)
+router.get('/symbols/:sym', symContrl.symbols_symbol)
 
 module.exports = router;

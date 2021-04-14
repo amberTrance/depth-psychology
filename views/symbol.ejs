@@ -9,15 +9,15 @@
 
         <div class="part">
             <div class="text">
-                <h1>Symbols</h1>
+                <h1><%= reqSymbol[0].symbol %></h1>
 
-                <% orderedSym.forEach(symbol => { %>
-                    <h2><%= symbol[0].symbol %></h2>
-                    <% symbol.forEach(item => { %> 
-                        <p><%= item.text %></p>
-                    <% }) %>
+                <% reqSymbol.forEach(symbol => { %>
+                    <div class="group">
+                        <p><%= symbol.text %></p>
+                        <small><b>- <%= symbol.author %></b>, <%= symbol.source %></small>
+                    </div>
+
                 <% }) %>
-
             </div>
            
             <%- include('./partials/symbolsNav.ejs') %>
