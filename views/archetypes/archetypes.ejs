@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<%- include('../partials/head.ejs') %>
+<body>
+    <div class="container">
+        <!-- navbar -->
+        <%- include('../partials/nav.ejs') %>
+
+        <div class="part">
+            <div class="text">
+                <h1>Archetypes and Mythical Figures</h1>
+                <% orderedArch.forEach(arc => { %>
+                    <h2><%= arc[0].archetype %></h2>
+                    <% arc.forEach(item => { %> 
+                        <p><%= item.text %></p>
+                    <% }) %>
+                <% }) %>
+            </div>
+            
+            <%- include('../partials/archNav.ejs') %>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

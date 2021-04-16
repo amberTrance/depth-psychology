@@ -3,8 +3,12 @@
         <div class="light-btn"><div>&#9788;</div></div>
         <div class="dark-btn"><div>&#9789;</div></div>
     </div>
-
-    <input type="text" id="search" placeholder="Search...">
+    
+    <form action="/search" method="GET" class="search-form">
+        <input type="text" name="value" id="value" placeholder="Search...">
+        <button type="submit" class="submit">Search</button>
+    </form>
+    
     
     <div class="links">
         <a href="/" class="link">Home</a>

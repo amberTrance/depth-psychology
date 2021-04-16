@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const symbolsRoutes = require('./routes/symbolRoutes')
+const archetypeRoutes = require('./routes/archetypeRoutes')
 
 const app = express()
 
@@ -43,8 +44,20 @@ app.get('/quotes', (req, res) => {
     res.render('quotes', { title: 'Quotes'})
 })
 
-app.get('/archetypes', (req, res) => {
-    res.render('archetypes', { title: 'Archetypes'})
-})
-
 app.use(symbolsRoutes)
+app.use(archetypeRoutes)
+
+// const Symbol = require('./models/symbol')
+// app.get('/search', (req, res) => {
+//     const { value } = req.query
+//     console.log(value)
+
+//     Symbol.find({ text: { "$regex": value }})
+//         .then(result => console.log(result))
+//         .catch(err => console.log(err))
+// })
+
+
+app.use((req, res) => {
+    res.status(404).render('404', { title: 404})
+})

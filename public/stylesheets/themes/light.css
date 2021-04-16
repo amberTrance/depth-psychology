@@ -1,0 +1,63 @@
+:root {
+    --back-color: white;
+    --text-color: rgb(50, 68, 83);
+    --nav-back: rgb(228, 228, 228);
+    --blugray: rgb(134, 157, 161);
+}
+
+body {
+    background-color: var(--back-color);
+    color: var(--text-color);
+}
+
+footer {
+    background-color: var(--nav-back);
+    color: var(--text-color);
+}
+
+.nav {
+    background-color: var(--nav-back);
+}
+
+.link {
+    color: var(--text-color);
+}
+
+.link:hover {
+    color: var(--back-color)
+}
+
+.part {
+    border-left: 2px var(--nav-back) solid; 
+}
+
+.symbols {
+    background-color: var(--nav-back);
+    border-bottom: 3px solid var(--back-color);
+}
+
+/* buttons */
+.submit, .dark-btn, .btn, .visitor {
+    background-color: var(--blugray);
+    color: var(--back-color);
+}
+
+.log, .input, textarea {
+    border:2px cornflowerblue inset;
+    color: var(--text-color);
+}
+
+.log:focus {
+    outline: none;
+}
+
+.light-btn {
+    background-color: white;
+    color:grey;
+}
+
+.add-btn {
+    color: var(--back-color);
+    border-color: var(--back-color);
+    background-color: var(--blugray);
+}

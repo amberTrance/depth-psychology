@@ -1,29 +1,41 @@
 const Symbol = require('../models/symbol')
 
+// function that creates array with the unique symbols
+function uniqueSymbols(result) {
+    let array = []
+
+    // Get the data for the symbols nav
+    result.forEach(symbol => {
+        array.push(symbol.symbol)
+    })
+    let uniqSymbols = [...new Set(array)]
+
+    return uniqSymbols
+}
+
 
 // Logic for create symbol
 const create_symbol_index = (req, res) => {
     Symbol.find().sort({ symbol: 1 })
     .then(result => {
-        let array = []
+        
+        let uniqSymbols = uniqueSymbols(result)
 
-        result.forEach(symbol => {
-            array.push(symbol.symbol)
-        })
-        let uniqSymbols = [...new Set(array)]
-
-        res.render('create-symbol', {symbols: uniqSymbols, title: 'Create Symbol'})
+        res.render('./symbols/create-symbol', {symbols: uniqSymbols, title: 'Create Symbol'})
     })
     .catch(err => console.log(err))
 }
 
+
 // Logic for post symbol
 const symbols_post = (req, res) => {
     const symbol = new Symbol(req.body)
+    const name = symbol.symbol
     symbol.save()
-        .then(result => res.redirect('/symbols'))
+        .then(result => res.redirect(`/symbols/${name}`))
         .catch(err => console.log(err))
 }
+
 
 // Logic for index symbols page
 const symbols_index = (req, res) => {
@@ -33,14 +45,7 @@ const symbols_index = (req, res) => {
             const array = [];
             const symbolsObj = [];
 
-            // For each symbol object in the db, push the symbol property value in a new array
-            result.forEach( symbol => {
-                array.push(symbol.symbol)
-            })
-            // Filter the array so that it contains only unique values
-            // it will look like uniqSymbols = ['blood', 'lion', 'bird' ...]
-            // I do this in order to create a new array which orders all the object by symbol
-            let uniqSymbols = [...new Set(array)]
+            let uniqSymbols = uniqueSymbols(result)
 
             // In this step, I create a separate indexed array for each unique symbol
             // Then I add only the symbol objects that have a corresponding symbol property
@@ -58,32 +63,31 @@ const symbols_index = (req, res) => {
         }
         
         // Return the symbolsObj ordered by symbol, and the unique Symbols for the symbols navbar
-        res.render('symbols', {orderedSym: symbolsObj, symbols: uniqSymbols, title: 'Symbols'})
+        res.render('./symbols/symbols', {orderedSym: symbolsObj, symbols: uniqSymbols, title: 'Symbols'})
     })
     .catch(err => console.log(err))
 }
 
+
 const symbols_symbol = (req, res) => {
     const paramSymbol = req.params.sym
-    
+   
     Symbol.find().sort({ symbol: 1 })
         .then(result => {
-            let array = []
-
-            // Get the data for the symbols nav
-            result.forEach(symbol => {
-                array.push(symbol.symbol)
-            })
-            uniqSymbols = [...new Set(array)]
+            let uniqSymbols = uniqueSymbols(result)
 
             // Get the filtered data with only our requested symbol
             let requestedSymbol = result.filter(item => item.symbol == paramSymbol)
-            console.log(requestedSymbol)
-
-            res.render('symbol', { reqSymbol: requestedSymbol, symbols: uniqSymbols, title: paramSymbol})
+            
+            if (requestedSymbol == 0) {
+                res.redirect('/404')
+            } else {
+                res.render('./symbols/symbol', { reqSymbol: requestedSymbol, symbols: uniqSymbols, title: paramSymbol})
+            }
         })
         .catch(err => console.log(err))       
 }
+
 
 module.exports = {
     create_symbol_index,

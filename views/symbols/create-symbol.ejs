@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- head -->
-<%- include('./partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 <body>
     <div class="container">
         <!-- navbar -->
-        <%- include('./partials/nav.ejs') %>
+        <%- include('../partials/nav.ejs') %>
 
         <div class="part">
             <div class="text">
@@ -13,24 +13,25 @@
                 <p>Please write the text part between quotes.</p>
                 <form action="/symbols" method="POST">
                     <label for="symbol">Symbol: </label><br>
-                    <input type="text" id="symbol" name="symbol"><br>
+                    <input type="text" class="input" name="symbol"><br>
 
                     <label for="author">Author: </label><br>
-                    <input type="text" id="author" name="author"><br>
+                    <input type="text" class="input" name="author"><br>
 
                     <label for="source">Book/Source: </label><br>
-                    <input type="text" id="source" name="source"><br>
+                    <input type="text" class="input source" name="source"><br>
 
                     <label for="text">Text: </label><br>
-                    <textarea id="text" name="text">""</textarea><br>
+                    <textarea name="text">""</textarea><br>
 
                     <button class="btn">Submit</button>
                 </form>
             </div>
             
-            <%- include('./partials/symbolsNav.ejs') %>
+            <%- include('../partials/symbolsNav.ejs') %>
         </div>        
         
     </div>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>

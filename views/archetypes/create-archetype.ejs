@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<%- include('../partials/head.ejs') %>
+<body>
+    <div class="container">
+        <!-- navbar -->
+        <%- include('../partials/nav.ejs') %>
+
+        <div class="part">
+            <div class="text">
+                <h1>Create Archetype</h1>
+                <p>Please write the text part between quotes.</p>
+                <form action="/archetypes" method="POST">
+                    <label for="archetype">Archetype: </label><br>
+                    <input type="text" class="input" name="archetype"><br>
+
+                    <label for="author">Author: </label><br>
+                    <input type="text" class="input" name="author"><br>
+
+                    <label for="source">Book/Source: </label><br>
+                    <input type="text" class="input source" name="source"><br>
+
+                    <label for="text">Text: </label><br>
+                    <textarea name="text">""</textarea><br>
+
+                    <button class="btn">Submit</button>
+                </form>
+            </div>
+            
+            <%- include('../partials/archNav.ejs') %>
+        </div>        
+        
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

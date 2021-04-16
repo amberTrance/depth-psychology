@@ -5,10 +5,13 @@
 body {
     font-family: 'Roboto Slab', serif;
     position: relative;
-    background-color:white;
     margin: 0;
-    color: rgb(50, 68, 83);
     letter-spacing: 0.5px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
 }
 
 .container {
@@ -32,7 +35,6 @@ h2 {
     height: 100px;
     display: flex;
     align-items: center;
-    background-color: rgb(228, 228, 228);
 }
 
 .links {
@@ -44,22 +46,19 @@ h2 {
     text-decoration: none;
     float: right;
     margin-right: 10px;
-    color:rgb(50, 68, 83);
 }
 
-.link:hover {
-    color: white;
-}
-
+/* Theme buttons */
 .mode {
     display: flex;
     margin: 20px;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .light-btn, .dark-btn {
-    width: 25px;
-    height: 50px;
+    width: 22.5px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,40 +67,56 @@ h2 {
 .light-btn {
     border-top-left-radius: 70px;
     border-bottom-left-radius: 70px;
-    background-color: white;
-    color:grey;
     font-weight: bold;
 }
 
 .dark-btn {
     border-top-right-radius: 70px;
     border-bottom-right-radius: 70px;
-    background-color:grey;
-    color: white
 }
 
-#search {
+/* Search input */
+#value {
     padding: 10px;
     font-family: inherit;
-    color: inherit;
+    letter-spacing: 0.5px;
     font-size: 16px;
     border-style: none;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
-/* ::placeholder {
+#value:focus {
+    outline: none;
+}
+
+/* submit search btn */
+.submit {
+    font-size: 16px;
+    border-style: none;
     font-family: inherit;
-} */
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    padding: 0px 15px;
+}
+
+.submit:focus {
+    outline: none;
+}
+
+.submit:active {
+    transform: scale(0.98)
+}
+
+/* search form */
+.search-form, .part {
+    display: flex;
+}
 
 /* About section */
 .mandala {
     margin-left: auto;
-    height: 90vh;
-}
-
-.part {
-    display: flex;
-    border: 2px rgb(228, 228, 228) solid;
+    height: 100vh;
 }
 
 /* Symbols */
@@ -110,7 +125,6 @@ h2 {
     flex-direction: column;
     width: 300px;
     margin-left: auto;
-    background-color: rgb(228, 228, 228);
 }
 
 .symbols h3 {
@@ -136,11 +150,13 @@ h2 {
 .add-btn {
     font-size: 18px;
     font-family: inherit;
-    padding: 15px;
+    padding: 10px;
     text-decoration: none;
     width: 300px;
     text-align: center;
-    border-bottom: 2px white solid;
+    border-width: 3px 0px;
+    border-style: solid;
+    letter-spacing: 1px;
 }
 
 /* Home */
@@ -156,9 +172,9 @@ h2 {
 
 .btn, .visitor {
     border-style: none;
+    font-family: inherit;
     font-size: 17px;
     letter-spacing: 1px;
-    background-color: rgb(208, 237, 250);
     cursor: pointer;
 }
 
@@ -175,50 +191,37 @@ h2 {
     transform: scale(0.98);
 }
 
-.btn:hover {
-    background-color: rgb(153, 245, 222);
-}
-
 .visitor {
     padding: 15px 20px;
     border-radius: 5px;
 }
 
 .log {
-    padding: 5px 10px;
+    font-family: inherit;
+    padding: 7px 10px;
     font-size: 17px;
     margin-bottom: 10px;
-    border-color: cornflowerblue;
 }
 
 /* Create symbol page */
-#symbol, #author {
+.input {
     padding: 7px;
     width: 250px;
 }
 
-#source {
+.input.source {
     padding: 7px;
-    width: 300px;
+    width: 350px;
 }
 
-#text {
-    width: 300px;
+textarea {
+    width: 350px;
     height: 200px;
 }
 
-#symbol, #author, #source, #text {
+.input, textarea {
     margin: 5px 0px 10px 0px;
-    border: 2px rgba(100, 148, 237, 0.548) solid;
     border-radius: 4px;
-}
-
-textarea:focus, input:focus {
-    outline-color: rgb(114, 195, 241);
-}
-
-textarea, input {
-    color: inherit;
 }
 
 a {

@@ -1,6 +1,6 @@
 const express = require('express')
 const symContrl = require('../controllers/symbolController')
-const router = express.Router();
+const router = express.Router()
 
 
 router.get('/symbol/create', symContrl.create_symbol_index)
