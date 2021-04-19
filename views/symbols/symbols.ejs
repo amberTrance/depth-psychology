@@ -8,7 +8,7 @@
         <%- include('../partials/nav.ejs') %>
 
         <div class="part">
-            <div class="text">
+            <div class="text main">
                 <h1>Symbols</h1>
 
                 <% orderedSym.forEach(symbol => { %>
@@ -17,7 +17,6 @@
                         <p><%= item.text %></p>
                     <% }) %>
                 <% }) %>
-
             </div>
            
             <%- include('../partials/symbolsNav.ejs') %>

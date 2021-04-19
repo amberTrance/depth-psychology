@@ -1,8 +1,9 @@
 :root {
     --back-color: white;
     --text-color: rgb(50, 68, 83);
-    --nav-back: rgb(228, 228, 228);
-    --blugray: rgb(134, 157, 161);
+    --nav-back: rgb(133, 159, 163);
+    --blugray: rgb(81, 108, 114);
+    --btn-color: rgb(128, 187, 202);
 }
 
 body {
@@ -10,21 +11,13 @@ body {
     color: var(--text-color);
 }
 
-footer {
+.nav, .symbols, footer {
     background-color: var(--nav-back);
-    color: var(--text-color);
+    color: var(--back-color);
 }
 
-.nav {
-    background-color: var(--nav-back);
-}
-
-.link {
-    color: var(--text-color);
-}
-
-.link:hover {
-    color: var(--back-color)
+.link:hover, .symbols li:hover {
+    color:var(--text-color);
 }
 
 .part {
@@ -32,13 +25,17 @@ footer {
 }
 
 .symbols {
-    background-color: var(--nav-back);
     border-bottom: 3px solid var(--back-color);
 }
 
 /* buttons */
-.submit, .dark-btn, .btn, .visitor {
+.submit, .dark-btn {
     background-color: var(--blugray);
+    color: var(--back-color);
+}
+
+.btn, .visitor {
+    background-color: var(--btn-color);
     color: var(--back-color);
 }
 
@@ -47,7 +44,7 @@ footer {
     color: var(--text-color);
 }
 
-.log:focus {
+.log:focus, .input:focus, textarea:focus {
     outline: none;
 }
 
@@ -60,4 +57,20 @@ footer {
     color: var(--back-color);
     border-color: var(--back-color);
     background-color: var(--blugray);
+}
+
+  
+/* Track */
+.text.main::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.text.main::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+.text.main::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

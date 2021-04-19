@@ -8,4 +8,4 @@ router.post('/symbols', symContrl.symbols_post)
 router.get('/symbols', symContrl.symbols_index)
 router.get('/symbols/:sym', symContrl.symbols_symbol)
 
-module.exports = router;
+module.exports = router

@@ -2,11 +2,14 @@ const express = require('express')
 const mongoose = require('mongoose')
 const symbolsRoutes = require('./routes/symbolRoutes')
 const archetypeRoutes = require('./routes/archetypeRoutes')
+const searchRoute = require('./routes/searchRoute')
 
 const app = express()
 
 // Connect to mongodb
 dbURI = "mongodb+srv://test:test1234@node.ul9of.mongodb.net/depth-psychology?retryWrites=true&w=majority"
+// Removes deprecation warning from adding indexes to models schema
+mongoose.set('useCreateIndex', true);
 // the second argument is an options object that removes the 'deprecated' message when starting nodemon
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(result => {
@@ -46,17 +49,7 @@ app.get('/quotes', (req, res) => {
 
 app.use(symbolsRoutes)
 app.use(archetypeRoutes)
-
-// const Symbol = require('./models/symbol')
-// app.get('/search', (req, res) => {
-//     const { value } = req.query
-//     console.log(value)
-
-//     Symbol.find({ text: { "$regex": value }})
-//         .then(result => console.log(result))
-//         .catch(err => console.log(err))
-// })
-
+app.use(searchRoute)
 
 app.use((req, res) => {
     res.status(404).render('404', { title: 404})

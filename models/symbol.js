@@ -24,6 +24,9 @@ const symbolSchema = new Schema({
     }
 }, { timestamps: true })
 
+// text indexing
+symbolSchema.index({ symbol: 'text', text: 'text', author: 'text'})
+
 // Create Model
 const Symbol = mongoose.model('Symbol', symbolSchema)
 

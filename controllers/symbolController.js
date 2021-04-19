@@ -42,26 +42,26 @@ const symbols_index = (req, res) => {
     Symbol.find().sort({ symbol: 1 })
         .then(result => {
 
-            const array = [];
-            const symbolsObj = [];
+        const array = [];
+        const symbolsObj = [];
 
-            let uniqSymbols = uniqueSymbols(result)
+        let uniqSymbols = uniqueSymbols(result)
 
-            // In this step, I create a separate indexed array for each unique symbol
-            // Then I add only the symbol objects that have a corresponding symbol property
-            // Final result will look like: 
-                // symbolsObj = [ [{symbol: blood, text: 'bla bla'}, {symbol:blood , text: 'bla'}], [{..}, {..}]]
-            for (let i = 0; i < uniqSymbols.length; i++) {
-                symbolsObj[i] = []
+        // In this step, I create a separate indexed array for each unique symbol
+        // Then I add only the symbol objects that have a corresponding symbol property
+        // Final result will look like: 
+            // symbolsObj = [ [{symbol: blood, text: 'bla bla'}, {symbol:blood , text: 'bla'}], [{..}, {..}]]
+        for (let i = 0; i < uniqSymbols.length; i++) {
+            symbolsObj[i] = []
 
-                result.forEach(symbol => {
-                    if (symbol.symbol === uniqSymbols[i]) {
+            result.forEach(symbol => {
+                if (symbol.symbol === uniqSymbols[i]) {
 
-                        symbolsObj[i].push(symbol)
-                    }
-                })
+                    symbolsObj[i].push(symbol)
+                }
+            })
         }
-        
+       
         // Return the symbolsObj ordered by symbol, and the unique Symbols for the symbols navbar
         res.render('./symbols/symbols', {orderedSym: symbolsObj, symbols: uniqSymbols, title: 'Symbols'})
     })
@@ -74,6 +74,7 @@ const symbols_symbol = (req, res) => {
    
     Symbol.find().sort({ symbol: 1 })
         .then(result => {
+            console.log(result)
             let uniqSymbols = uniqueSymbols(result)
 
             // Get the filtered data with only our requested symbol
