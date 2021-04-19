@@ -20,7 +20,7 @@ body {
     color:var(--text-color);
 }
 
-.part {
+.part, .home {
     border-left: 2px var(--nav-back) solid; 
 }
 

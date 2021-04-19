@@ -31,7 +31,7 @@ footer {
     color: var(--highlight);
 }
 
-.part {
+.part, .home {
     border-left: 2px var(--nav-back) solid;
 }
 

@@ -202,15 +202,11 @@ h2 {
 }
 
 /* Home */
-.container.h {
+.home {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 600px;
-}
-
-.home {
-    margin: 50px;
 }
 
 .btn, .visitor {
