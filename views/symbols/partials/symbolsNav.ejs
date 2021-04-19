@@ -1,0 +1,16 @@
+<div class="symbols">
+    <div>
+        <img src="/images/mandala.jpg" alt="" class="smallMandala">
+        <a href="/symbol/create" class="add-btn">Add Symbol</a>
+    </div>
+    <div class="list">
+        <h3>Categories :</h3>
+        <ul>
+            <% symbols.forEach(symbol => { %>
+                <li>
+                    <a href="/symbols/<%= symbol %>"><%= symbol %></a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</div>

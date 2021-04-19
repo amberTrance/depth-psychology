@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const symbolsRoutes = require('./routes/symbolRoutes')
 const archetypeRoutes = require('./routes/archetypeRoutes')
 const searchRoute = require('./routes/searchRoute')
+const quoteRoutes = require('./routes/quoteRoutes')
 
 const app = express()
 
@@ -42,14 +43,10 @@ app.get('/about', (req, res) => {
     res.render('about', { title: 'About'})
 })
 
-
-app.get('/quotes', (req, res) => {
-    res.render('quotes', { title: 'Quotes'})
-})
-
 app.use(symbolsRoutes)
 app.use(archetypeRoutes)
 app.use(searchRoute)
+app.use(quoteRoutes)
 
 app.use((req, res) => {
     res.status(404).render('404', { title: 404})

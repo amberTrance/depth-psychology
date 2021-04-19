@@ -59,18 +59,23 @@ body {
     background-color: var(--blugray);
 }
 
+.submitIcon {
+    background-color: var(--back-color);
+}
   
-/* Track */
-.text.main::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
+@media (min-width: 361px) {
+   /* Track */
+    .text.main::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 
-/* Handle */
-.text.main::-webkit-scrollbar-thumb {
-    background: #888;
-}
+    /* Handle */
+    .text.main::-webkit-scrollbar-thumb {
+        background: #888;
+    }
 
-/* Handle on hover */
-.text.main::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    /* Handle on hover */
+    .text.main::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    } 
 }

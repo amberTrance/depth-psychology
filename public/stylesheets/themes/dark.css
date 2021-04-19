@@ -62,7 +62,7 @@ footer {
     font-size: 15px;
 }
 
-#value {
+#value, .submitIcon {
     background-color: var(--light-coral);
 }
 
@@ -84,17 +84,19 @@ small {
     color: var(--coral);
 }
 
-/* Track */
-.text.main::-webkit-scrollbar-track {
-    background: var(--back-color);
-}
+@media (min-width: 361px) {
+    /* Track */
+    .text.main::-webkit-scrollbar-track {
+        background: var(--back-color);
+    }
 
-/* Handle */
-.text.main::-webkit-scrollbar-thumb {
-    background: var(--blugray);
-}
+    /* Handle */
+    .text.main::-webkit-scrollbar-thumb {
+        background: var(--blugray);
+    }
 
-/* Handle on hover */
-.text.main::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    /* Handle on hover */
+    .text.main::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
 }

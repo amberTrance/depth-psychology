@@ -42,7 +42,6 @@ const symbols_index = (req, res) => {
     Symbol.find().sort({ symbol: 1 })
         .then(result => {
 
-        const array = [];
         const symbolsObj = [];
 
         let uniqSymbols = uniqueSymbols(result)
@@ -74,7 +73,6 @@ const symbols_symbol = (req, res) => {
    
     Symbol.find().sort({ symbol: 1 })
         .then(result => {
-            console.log(result)
             let uniqSymbols = uniqueSymbols(result)
 
             // Get the filtered data with only our requested symbol

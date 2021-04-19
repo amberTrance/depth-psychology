@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<%- include('../partials/head.ejs') %>
+<body>
+    <div class="container">
+        <!-- navbar -->
+        <%- include('../partials/nav.ejs') %>
+
+        <div class="part">
+            <div class="text main">
+                <h1>Quotes</h1>
+                <% quotes.forEach(quote => { %>
+                    <p><%= quote.text %></p>
+                    <small><b><%= quote.author %></b>, <%= quote.source %></small>
+                <% }) %>
+            </div>
+            
+            <%- include('./partials/quotesNav.ejs') %>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>  
+</body>
+</html>
