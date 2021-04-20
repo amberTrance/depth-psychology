@@ -3,11 +3,13 @@
 <!-- head -->
 <%- include('./partials/head.ejs') %>
 <body>
-    <div class="container h">
+    <div class="container">
         <!-- navbar -->
         <%- include('./partials/nav.ejs') %>
-        <p class="notfound">404</p>
-        <h1>This page does not exist!</h1>
+        <div class="home">
+            <p id="notfound"><span class="notfound">404</span></p>
+            <h1>This page does not exist!</h1>
+        </div>
     </div>
     <%- include('./partials/footer.ejs') %>       
 </body>

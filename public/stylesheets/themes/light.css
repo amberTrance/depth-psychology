@@ -62,6 +62,14 @@ body {
 .submitIcon {
     background-color: var(--back-color);
 }
+
+.searchIcon:hover {
+    border-color: var(--btn-color);
+}
+
+.searchIcon:hover::before {
+    background-color: var(--btn-color);
+}
   
 @media (min-width: 361px) {
    /* Track */

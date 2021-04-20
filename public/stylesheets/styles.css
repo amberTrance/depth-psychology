@@ -27,11 +27,15 @@ footer {
 .notfound {
     font-size: 100px;
     font-weight: bold;
-    margin-bottom: 20px;
     text-transform: uppercase;
-	background: linear-gradient(to right, #74c5c5 0%, #986dce 100%);
+	background: linear-gradient(to right, #74c5c5 0%, #683e9b 100%);
+    background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+#notfound {
+    margin-top: 50px;
 }
 
 h1 {
@@ -131,14 +135,6 @@ h2 {
     cursor: pointer;
 }
 
-.searchIcon:hover {
-    border-color:blue;
-}
-
-.searchIcon:hover:before {
-    background-color: blue;
-}
-
 .searchIcon:before {
     content: '';
     position: absolute;
@@ -149,7 +145,6 @@ h2 {
     left: 5px;
     transform: rotate(50deg);
 }
-
 
 /* submit search btn */
 .submit {

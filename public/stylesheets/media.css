@@ -64,7 +64,7 @@
         right: 20px;
         border: 2px rgba(248, 248, 248, 0.26) solid;
         background-color: inherit;
-        width: 200px;
+        width: 150px;
     }
 
     .links a:not(:first-child) {

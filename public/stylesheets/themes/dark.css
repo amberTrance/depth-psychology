@@ -80,6 +80,14 @@ h1, h2 {
     border-color: var(--text-color);
 }
 
+.searchIcon:hover {
+    border-color:var(--highlight);
+}
+
+.searchIcon:hover::before {
+    background-color: var(--highlight);
+}
+
 small {
     color: var(--coral);
 }
