@@ -1,12 +1,12 @@
 <div class="symbols">
     <img src="/images/mandala1.jpg" alt="" class="smallMandala">
-    <a href="#" class="add-btn">Add Quote</a>
+    <a href="/quote/create" class="add-btn">Add Quote</a>
     <h3>Authors :</h3>
     <div class="list">
         <ul>
-            <% quotes.forEach(quote => { %>
+            <% navquotes.forEach(quote => { %>
                 <li>
-                    <a href="#"><%= quote.author %></a>
+                    <a href="#"><%= quote %></a>
                 </li>
             <% }) %>
         </ul>

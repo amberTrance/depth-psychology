@@ -2,7 +2,7 @@
     --back-color: rgb(41, 55, 66);
     --input-text: rgb(16, 21, 26); 
     --text-color: rgb(212, 212, 212);
-    --nav-back: rgba(23, 97, 99, 0.493);
+    --nav-back: rgb(18, 70, 71);
     --blugray: rgb(134, 157, 161);
     --coral: rgb(108, 177, 255);
     --highlight: white;
@@ -86,17 +86,17 @@ small {
 
 @media (min-width: 361px) {
     /* Track */
-    .text.main::-webkit-scrollbar-track {
+    ::-webkit-scrollbar-track {
         background: var(--back-color);
     }
 
     /* Handle */
-    .text.main::-webkit-scrollbar-thumb {
-        background: var(--blugray);
+    ::-webkit-scrollbar-thumb {
+        background: var(--nav-back);
     }
 
     /* Handle on hover */
-    .text.main::-webkit-scrollbar-thumb:hover {
+    ::-webkit-scrollbar-thumb:hover {
         background: #555;
     }
 }
