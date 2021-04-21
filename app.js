@@ -20,11 +20,11 @@ require('./config/passport')(passport)
 const PORT = process.env.PORT || 3000
 
 // Connect to mongodb
-dbURI = "mongodb+srv://test:test1234@node.ul9of.mongodb.net/depth-psychology?retryWrites=true&w=majority"
+const uri = "mongodb+srv://test:test1234@node.ul9of.mongodb.net/depth-psychology?retryWrites=true&w=majority"
 // Removes deprecation warning from adding indexes to models schema
 mongoose.set('useCreateIndex', true);
 // the second argument is an options object that removes the 'deprecated' message when starting nodemon
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(result => {
         // Listen for requests only after the connection to the db was established
         // Server, port 3000, localhost
