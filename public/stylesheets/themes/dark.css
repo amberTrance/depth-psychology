@@ -46,6 +46,10 @@ footer {
     color: var(--highlight);
 }
 
+#dark-icon {
+    background-color: var(--blugray);
+}
+
 .log:focus, .input:focus, textarea:focus {
     outline-color: var(--blugray);
 }

@@ -27,7 +27,6 @@ mongoose.set('useCreateIndex', true);
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(result => {
         // Listen for requests only after the connection to the db was established
-        // Server, port 3000, localhost
         app.listen(PORT)
     })
     .catch(err => console.log(err))
