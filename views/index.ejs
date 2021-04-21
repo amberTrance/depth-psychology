@@ -11,13 +11,13 @@
                 <h1>Depth Psychology Archives</h1>
                 <% if (1) { %> 
                     <h3>Admin Log In</h3>
-                    <form action="/about">
-                        <input type="text" class="log" placeholder="username"><br>
-                        <input type="password" class="log" placeholder="password"><br>
+                    <form action="/about" method="POST">
+                        <input name="userName" type="text" class="log" placeholder="username"><br>
+                        <input name="password" type="password" class="log" placeholder="password"><br>
                         <button class="btn">Submit</button>
                     </form>
-                    <p>or</p>
-                    <button class="visitor">Continue as visitor</button>
+                    <p>or</p><br>
+                    <a href="/about" class="visitor">Continue as visitor</a>
                 <% } else { %>
                     <h3>Welcome!</h3>
                     <button class="btn">Log Out</button>

@@ -10,15 +10,15 @@ const symbolSchema = new Schema({
         type: String,
         required: true
     },
-    text: {
-        type: String,
-        required: true
-    },
     author: {
         type: String,
         required: true
     },
     source: {
+        type: String,
+        required: true
+    },
+    text: {
         type: String,
         required: true
     }

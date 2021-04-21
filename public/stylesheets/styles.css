@@ -6,7 +6,12 @@ body {
     font-family: 'Roboto Slab', serif;
     position: relative;
     margin: 0;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+}
+
+p {
+    word-spacing: 3px;
+    line-height: 1.5em;
 }
 
 footer {
@@ -58,6 +63,7 @@ h2 {
 .navicon {
     display: none;
     padding-left: 10px;
+    cursor: pointer;
 }
 
 .links {

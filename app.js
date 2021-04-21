@@ -7,6 +7,8 @@ const quoteRoutes = require('./routes/quoteRoutes')
 
 const app = express()
 
+const PORT = process.env.PORT || 3000
+
 // Connect to mongodb
 dbURI = "mongodb+srv://test:test1234@node.ul9of.mongodb.net/depth-psychology?retryWrites=true&w=majority"
 // Removes deprecation warning from adding indexes to models schema
@@ -16,7 +18,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(result => {
         // Listen for requests only after the connection to the db was established
         // Server, port 3000, localhost
-        app.listen(3000)
+        app.listen(PORT)
     })
     .catch(err => console.log(err))
 
@@ -24,20 +26,15 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 // Set ejs template engine
 app.set('view engine', 'ejs')
 
-
-
 // use public folder static files
 app.use(express.static('public'))
 // takes all the url encoded data and parses it into an object 
 // that can be used in the request object
 app.use(express.urlencoded({ extended: true }))
 
-
-
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home' })
 })
-
 
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About'})

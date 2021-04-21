@@ -1,50 +1,33 @@
 const Archetype = require('../models/archetype')
 
-// Takes in the result of Archetype Query and returns an array containing
-// the unique archetypes (not repeated)
-function uniqueArc(result) {
-    let array = []
+const archetypes_index = async (req, res) => {
 
-    result.forEach(arc => {
-        array.push(arc.archetype)
-    })
+    let uniqArchetypes = await Archetype.distinct("archetype")
 
-    let uniqArchetypes = [...new Set(array)]
-    
-    return uniqArchetypes
-}
+    let archetypes = await Archetype.find().sort({ archetype: 1 })
 
-const archetypes_index = (req, res) => {
-    Archetype.find().sort({ archetype: 1 })
-        .then(result => {
+    let orderedArch = []
+    for (let i = 0; i < uniqArchetypes.length; i++) {
+        orderedArch[i] = []
 
-            let uniqArchetypes = uniqueArc(result)
+        archetypes.forEach(arc => {
+            if (arc.archetype === uniqArchetypes[i]) {
 
-            let orderedArch = []
-            for (let i = 0; i < uniqArchetypes.length; i++) {
-                orderedArch[i] = []
-
-                result.forEach(arc => {
-                    if (arc.archetype === uniqArchetypes[i]) {
-
-                        orderedArch[i].push(arc)
-                    }
-                })
+                orderedArch[i].push(arc)
             }
-
-            res.render('./archetypes/archetypes', { orderedArch: orderedArch, archetypes: uniqArchetypes, title: 'Archetypes' })
         })
-        .catch(err => console.log(err))
+    }
+
+    res.render('./archetypes/archetypes', { orderedArch: orderedArch, archetypes: uniqArchetypes, title: 'Archetypes' })
+
 }
 
-const archetype_create = (req, res) => {
-    Archetype.find().sort({ archetype: 1 })
-        .then(result => {
-            let uniqArchetypes = uniqueArc(result)
+const archetype_create = async (req, res) => {
 
-            res.render('./archetypes/create-archetype', { archetypes: uniqArchetypes, title: 'Create Archetype'})
-        })
-        .catch(err => console.log(err))
+    let uniqArchetypes = await Archetype.distinct("archetype")
+
+    res.render('./archetypes/create-archetype', { archetypes: uniqArchetypes, title: 'Create Archetype'})
+
 }
 
 const archetype_post = (req, res) => {
@@ -56,20 +39,14 @@ const archetype_post = (req, res) => {
 }
 
 
-const archetypes_archetype = (req, res) => {
+const archetypes_archetype = async (req, res) => {
     const paramArc = req.params.arc
 
-    Archetype.find().sort({ archetype: 1 })
-        .then(result => {
-            let uniqArchetypes = uniqueArc(result)
+    let requestedArc = await Archetype.find({ archetype: paramArc }).sort({ createdAt: -1 })
+    let uniqArchetypes = await Archetype.distinct("archetype")
 
-            let requestedArc = result.filter(item => item.archetype == paramArc)
-
-            res.render('./archetypes/archetype', { reqArchetype: requestedArc, archetypes: uniqArchetypes, title: paramArc })
-        })
-        .catch(err => console.log(err))
+    res.render('./archetypes/archetype', { reqArchetype: requestedArc, archetypes: uniqArchetypes, title: paramArc })
 }
-
 
 module.exports = {
     archetypes_index,
