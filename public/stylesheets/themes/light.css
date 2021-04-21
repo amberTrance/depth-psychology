@@ -34,10 +34,6 @@ body {
     color: var(--back-color);
 }
 
-#dark-icon {
-    background-color: var(--blugray);
-}
-
 .btn, .visitor {
     background-color: var(--btn-color);
     color: var(--back-color);
