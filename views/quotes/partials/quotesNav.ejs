@@ -1,6 +1,8 @@
 <div class="symbols">
     <img src="/images/mandala1.jpg" alt="" class="smallMandala">
-    <a href="/quote/create" class="add-btn">Add Quote</a>
+    <% if (user) { %>
+        <a href="/quote/create" class="add-btn">Add Quote</a>
+    <% } %>    
     <h3>Authors :</h3>
     <div class="list">
         <ul>

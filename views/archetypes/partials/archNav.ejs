@@ -1,6 +1,9 @@
 <div class="symbols">
     <img src="/images/mandala2.jpg" alt="" class="smallMandala">
-    <a href="/archetype/create" class="add-btn">Add Archetype</a>
+    <% if (user) { %>
+        <a href="/archetype/create" class="add-btn">Add Archetype</a>
+    <% } %>
+    
     <h3>Archetypes :</h3>
     <div class="list">
         <ul>

@@ -43,6 +43,34 @@ footer {
     margin-top: 50px;
 }
 
+.success, .error {
+    padding: 15px;
+    border-radius: 5px;
+    color: black;
+    position: relative;
+}
+
+.x {
+    color: white;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.error {
+    background-color: rgba(255, 207, 74, 0.877);
+    width: 320px;
+}
+
+.success {
+    background-color: rgba(80, 245, 75, 0.63);
+    width: 320px;
+}
+
 h1 {
     letter-spacing: 2px;
 }

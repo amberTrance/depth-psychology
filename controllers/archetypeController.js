@@ -18,7 +18,8 @@ const archetypes_index = async (req, res) => {
         })
     }
 
-    res.render('./archetypes/archetypes', { orderedArch: orderedArch, archetypes: uniqArchetypes, title: 'Archetypes' })
+    res.render('./archetypes/archetypes', 
+    { orderedArch: orderedArch, archetypes: uniqArchetypes, title: 'Archetypes', user: req.user })
 
 }
 
@@ -26,7 +27,8 @@ const archetype_create = async (req, res) => {
 
     let uniqArchetypes = await Archetype.distinct("archetype")
 
-    res.render('./archetypes/create-archetype', { archetypes: uniqArchetypes, title: 'Create Archetype'})
+    res.render('./archetypes/create-archetype', 
+    { archetypes: uniqArchetypes, title: 'Create Archetype', user: req.user})
 
 }
 
@@ -45,7 +47,8 @@ const archetypes_archetype = async (req, res) => {
     let requestedArc = await Archetype.find({ archetype: paramArc }).sort({ createdAt: -1 })
     let uniqArchetypes = await Archetype.distinct("archetype")
 
-    res.render('./archetypes/archetype', { reqArchetype: requestedArc, archetypes: uniqArchetypes, title: paramArc })
+    res.render('./archetypes/archetype', 
+    { reqArchetype: requestedArc, archetypes: uniqArchetypes, title: paramArc, user: req.user })
 }
 
 module.exports = {

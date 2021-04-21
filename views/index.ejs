@@ -9,9 +9,18 @@
         <div class="home">
             <div style="margin-top:50px;">
                 <h1>Depth Psychology Archives</h1>
-                <% if (1) { %> 
+                <% if (user === undefined) { %> 
                     <h3>Admin Log In</h3>
-                    <form action="/about" method="POST">
+                    <% if (error != '') { %>
+                        <p class="error"><%= error %><span class="x">&#10006;</span></p>    
+                    <% } %>
+                    <% if (success_msg != '') { %>
+                        <p class="success"><%= success_msg %><span class="x">&#10006;</span></p>    
+                    <% } %>
+                    <% if (error_msg != '') { %>
+                        <p class="error"><%= error_msg %><span class="x">&#10006;</span></p>    
+                    <% } %>
+                    <form action="/" method="POST">
                         <input name="userName" type="text" class="log" placeholder="username"><br>
                         <input name="password" type="password" class="log" placeholder="password"><br>
                         <button class="btn">Submit</button>
@@ -20,7 +29,9 @@
                     <a href="/about" class="visitor">Continue as visitor</a>
                 <% } else { %>
                     <h3>Welcome!</h3>
-                    <button class="btn">Log Out</button>
+                    <form action="/logout" method="GET">
+                        <button class="btn">Log Out</button>
+                    </form>
                 <% } %>
             </div>
         </div>

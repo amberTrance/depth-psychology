@@ -5,7 +5,8 @@ const create_symbol_index = (req, res) => {
 
     Symbol.distinct("symbol")
         .then(result => {
-            res.render('./symbols/create-symbol', {symbols: result, title: 'Create Symbol'})
+            res.render('./symbols/create-symbol', 
+            {symbols: result, title: 'Create Symbol', user: req.user})
         })
         .catch(err => console.log(err))
 }
@@ -39,7 +40,8 @@ const symbols_index = async (req, res) => {
     }
        
     // Return the symbolsObj ordered by symbol, and the unique Symbols for the symbols navbar
-    res.render('./symbols/symbols', {orderedSym: symbolsObj, symbols: uniqSymbols, title: 'Symbols'})
+    res.render('./symbols/symbols', 
+    {orderedSym: symbolsObj, symbols: uniqSymbols, title: 'Symbols', user: req.user})
 }
 
 
@@ -52,7 +54,8 @@ const symbols_symbol = async (req, res) => {
     if (requestedSymbol == 0) {
         res.redirect('/404')
     } else {
-        res.render('./symbols/symbol', { reqSymbol: requestedSymbol, symbols: uniqSymbols, title: paramSymbol})
+        res.render('./symbols/symbol', 
+        { reqSymbol: requestedSymbol, symbols: uniqSymbols, title: paramSymbol, user: req.user})
     }
 }
 

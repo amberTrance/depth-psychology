@@ -6,14 +6,16 @@ const quotes_index = async (req, res) => {
     let navquotes = await Quote.distinct("author")
 
     
-    res.render('./quotes/quotes', {quotes: quotes, navquotes: navquotes, title: 'Quotes'})
+    res.render('./quotes/quotes', 
+    {quotes: quotes, navquotes: navquotes, title: 'Quotes', user: req.user})
 }
 
 const quote_create = async (req, res) => {
     // Select all distinct authors in the collection
     let navQuotes = await Quote.distinct("author")
 
-    res.render('./quotes/create-quote', {navquotes: navQuotes,  title: 'Create Quote'})
+    res.render('./quotes/create-quote', 
+    {navquotes: navQuotes,  title: 'Create Quote', user: req.user})
 }
 
 const quote_post = (req, res) => {
@@ -31,7 +33,8 @@ const quotes_author = async (req, res) => {
     let navQuotes = await Quote.distinct("author")
     let quotes = await Quote.find({ author: author}).sort({createdAt: -1})
 
-    res.render('./quotes/quote', {quotes: quotes, navquotes: navQuotes, title: author})
+    res.render('./quotes/quote', 
+    {quotes: quotes, navquotes: navQuotes, title: author, user: req.user})
 }
 
 module.exports = {
