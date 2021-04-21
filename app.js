@@ -20,7 +20,7 @@ require('./config/passport')(passport)
 const PORT = process.env.PORT || 3000
 
 // Connect to mongodb
-const uri = "mongodb+srv://test:test1234@node.ul9of.mongodb.net/depth-psychology?retryWrites=true&w=majority"
+const uri = process.env.MONGODB_URI;
 // Removes deprecation warning from adding indexes to models schema
 mongoose.set('useCreateIndex', true);
 // the second argument is an options object that removes the 'deprecated' message when starting nodemon
