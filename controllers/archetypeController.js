@@ -47,8 +47,12 @@ const archetypes_archetype = async (req, res) => {
     let requestedArc = await Archetype.find({ archetype: paramArc }).sort({ createdAt: -1 })
     let uniqArchetypes = await Archetype.distinct("archetype")
 
-    res.render('./archetypes/archetype', 
-    { reqArchetype: requestedArc, archetypes: uniqArchetypes, title: paramArc, user: req.user })
+    if (requestedArc == 0) {
+        res.redirect('/404')
+    } else {
+        res.render('./archetypes/archetype', 
+        { reqArchetype: requestedArc, archetypes: uniqArchetypes, title: paramArc, user: req.user })
+    }
 }
 
 module.exports = {

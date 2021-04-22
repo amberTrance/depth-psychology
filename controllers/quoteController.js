@@ -33,8 +33,12 @@ const quotes_author = async (req, res) => {
     let navQuotes = await Quote.distinct("author")
     let quotes = await Quote.find({ author: author}).sort({createdAt: -1})
 
-    res.render('./quotes/quote', 
-    {quotes: quotes, navquotes: navQuotes, title: author, user: req.user})
+    if (quotes == 0) {
+        res.redirect('/404')
+    } else {
+        res.render('./quotes/quote', 
+        {quotes: quotes, navquotes: navQuotes, title: author, user: req.user})
+    }
 }
 
 module.exports = {
