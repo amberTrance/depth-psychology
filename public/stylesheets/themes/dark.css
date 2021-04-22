@@ -111,4 +111,18 @@ small {
     ::-webkit-scrollbar-thumb:hover {
         background: #555;
     }
+
+    .list::-webkit-scrollbar-track {
+        background: var(--nav-back);
+    }
+
+    /* Handle */
+    .list::-webkit-scrollbar-thumb {
+        background: #555;
+    }
+
+    /* Handle on hover */
+    .list::-webkit-scrollbar-thumb:hover {
+        background: var(--blugray);
+    } 
 }

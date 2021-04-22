@@ -89,5 +89,9 @@ body {
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
         background: #555;
-    } 
+    }
+
+    .list::-webkit-scrollbar-track {
+        background: var(--nav-back);
+    }
 }
