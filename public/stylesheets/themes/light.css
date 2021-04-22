@@ -83,7 +83,7 @@ body {
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: rgb(255, 255, 255);
+        background: #888;
     }
 
     /* Handle on hover */

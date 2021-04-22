@@ -102,13 +102,9 @@ small {
         background: var(--back-color);
     }
 
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: var(--nav-back);
-    }
-
     /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
+    ::-webkit-scrollbar-thumb,
+    .list::-webkit-scrollbar-thumb  {
         background: #555;
     }
 
@@ -116,13 +112,9 @@ small {
         background: var(--nav-back);
     }
 
-    /* Handle */
-    .list::-webkit-scrollbar-thumb {
-        background: #555;
-    }
-
     /* Handle on hover */
-    .list::-webkit-scrollbar-thumb:hover {
+    .list::-webkit-scrollbar-thumb:hover,
+    ::-webkit-scrollbar-thumb:hover {
         background: var(--blugray);
     } 
 }
