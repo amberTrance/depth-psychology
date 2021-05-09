@@ -7,7 +7,7 @@
         <!-- navbar -->
         <%- include('./partials/nav.ejs') %>
         <div class="part about">
-            <section class="text">
+            <section class="text about">
                 <h1>The App</h1>
                 <p>
                     The main purpose of this application is to collect references on various
@@ -15,7 +15,6 @@
                     words in order to find the collective or archetypal meaning of that word
                     is very useful.
                 </p>
-                <h3>About Symbols</h3>
                 <p>
                     If you have never heard of Carl Jung or symbolic interpretation,
                     think of it this way. Humans make spontaneous associations. If you
@@ -40,11 +39,14 @@
                     ourselves, about our psychological disturbances. Through this self-knowledge,
                     we develop and become better selves.
                 </p>
-                <b><p>
-                    Picture: The painting is realized by Carl Jung. In it, you
-                    can see a mandala or circle split in four. The mandala is a symbol of wholeness,
-                    while the quaternity represents the union of the four parts into a whole.
-                </p></b>
+                <details>
+                    <summary>Picture</summary>
+                    <p>
+                        The painting is realized by Carl Jung. In it, you
+                        can see a mandala or circle split in four. The mandala is a symbol of wholeness,
+                        while the quaternity represents the union of the four parts into a whole.
+                    </p>
+                </details>
             </section>
             <img src="./images/quadrated-circle.jpg" alt="mandala painting by Jung" class="mandala">
         </div>

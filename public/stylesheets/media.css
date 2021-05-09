@@ -92,6 +92,7 @@
 
     .part.about {
         flex-direction: column;
+        height: auto;
     }
 
     .mandala {

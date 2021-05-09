@@ -231,6 +231,14 @@ h2 {
     height: 100vh;
 }
 
+.part.about {
+    height: 100vh;
+}
+
+.text.about {
+    padding:15px 20px 25px 50px;
+}
+
 /* Symbols */
 .symbols {
     display: flex;
