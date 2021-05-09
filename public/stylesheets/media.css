@@ -30,7 +30,7 @@
         padding: 10px;
     }
 
-    .text {
+    .text, .text.about {
         order: 2;
         padding: 10px;
     }
