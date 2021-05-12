@@ -26,7 +26,7 @@ function setTheme(theme) {
     if (theme == 'light') {
       themeSwitch.href = '/stylesheets/themes/light.css'
     } else {
-      themeSwitch.href = '/stylesheets/themes/dark.css'
+    //   themeSwitch.href = '/stylesheets/themes/dark.css'
     }
     localStorage.setItem('style', theme);
 }
