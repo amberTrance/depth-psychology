@@ -20,8 +20,13 @@ body {
     color:var(--text-color);
 }
 
-.part, .home {
-    border-left: 2px var(--nav-back) solid; 
+.part {
+    border-left: 2px var(--nav-back) solid;
+}
+
+.home {
+    border-left: 2px var(--nav-back) solid;
+    border-right: 2px var(--nav-back) solid; 
 }
 
 .symbols {
