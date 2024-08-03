@@ -9,6 +9,7 @@ const loginRoute = require('./routes/loginRoute')
 const flash = require('connect-flash')
 const session = require('express-session')
 
+require('dotenv').config();
 
 const app = express()
 
